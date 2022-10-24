@@ -10,7 +10,6 @@ class Soldier:
         self.strength = int(strength)
     
     def attack(self):
-        
         return self.strength
     
     def receiveDamage(self, damage):
@@ -65,6 +64,6 @@ class War:
         self.saxonArmy.append(saxon)
     
     def vikingAttack(self):
-        Saxon.receiveDamage(self, Viking.strength)
+        Saxon.receiveDamage(self, Viking.attack())
         if Saxon.health == 0:
             self.saxonArmy.pop(Saxon)
