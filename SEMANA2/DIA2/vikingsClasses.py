@@ -1,4 +1,4 @@
-
+import random
 # Soldier
 
 
@@ -53,9 +53,9 @@ class Saxon(Soldier):
 
 
 class War:
-    def __init__(self, vikingArmy = [], saxonArmy = []):
-        self.vikingArmy = vikingArmy
-        self.saxonArmy = saxonArmy
+    def __init__(self):
+        self.vikingArmy = []
+        self.saxonArmy = []
 
     def addViking(self, viking):
         self.vikingArmy.append(viking)
@@ -64,16 +64,18 @@ class War:
         self.saxonArmy.append(saxon)
     
     def vikingAttack(self):
-        Saxon.receiveDamage(self, Viking.attack(self))
-        if Soldier.receiveDamage(self) == 0:
-            self.saxonArmy.pop()
-        return Saxon.receiveDamage(self, Viking.attack(self))
+        s = random.choice(self.saxonArmy)
+        v = random.choice(self.vikingArmy)
+        Saxon.receiveDamage(self, Viking.attack())
+        if s.health == 0:
+            self.saxonArmy.remove(Saxon)
+        return Saxon.receiveDamage(self, Viking.attack())
 
     def saxonAttack(self):
-        Viking.receiveDamage(self, Saxon.attack(self))
-        if Soldier.health == 0:
-            self.saxonArmy.pop()
-        return Viking.receiveDamage(self, Saxon.attack(self))
+        Viking.receiveDamage(self, Saxon.attack())
+        if Viking.health == 0:
+            self.saxonArmy.remove(Viking)
+        return Viking.receiveDamage(self, Saxon.attack())
 
     def showStatus(self):
         if len(self.saxonArmy) == 0:
