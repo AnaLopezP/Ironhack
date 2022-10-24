@@ -1,4 +1,5 @@
 import random
+from re import S
 # Soldier
 
 
@@ -64,18 +65,20 @@ class War:
         self.saxonArmy.append(saxon)
     
     def vikingAttack(self):
+        v = random.choice(self.vikingArmy)
         s = random.choice(self.saxonArmy)
-        Saxon.receiveDamage(self, Viking.attack(self))
+        Saxon.receiveDamage(self, v.strength)
         if s.health == 0:
             self.saxonArmy.remove(s)
-        return Saxon.receiveDamage(self, Viking.attack(self))
+        return Saxon.receiveDamage(self, v.strength)
 
     def saxonAttack(self):
         v = random.choice(self.vikingArmy)
-        Viking.receiveDamage(self, Saxon.attack(self))
+        s = random.choice(self.saxonArmy)
+        Viking.receiveDamage(self, s.strength)
         if v.health == 0:
             self.saxonArmy.remove(v)
-        return Viking.receiveDamage(self, Saxon.attack(self))
+        return Viking.receiveDamage(self, s.strength)
 
     def showStatus(self):
         if len(self.saxonArmy) == 0:
