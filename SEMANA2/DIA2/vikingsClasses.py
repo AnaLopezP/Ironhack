@@ -53,7 +53,7 @@ class Saxon(Soldier):
 
 
 class War:
-    def __init__(self, s, v):
+    def __init__(self,):
         self.v = random.choice(self.vikingArmy)
         self.s = random.choice(self.saxonArmy)
         self.vikingArmy = []
@@ -66,16 +66,16 @@ class War:
         self.saxonArmy.append(saxon)
     
     def vikingAttack(self):
-        resultado =s.receiveDamage(v.strength)
-        if s.health == 0:
-            self.saxonArmy.remove(s)
+        resultado =self.s.receiveDamage(v.strength)
+        if self.s.health == 0:
+            self.saxonArmy.remove(self.s)
         return resultado
         
 
     def saxonAttack(self):
-        resultado = v.receiveDamage(s.strength)
-        if v.health == 0:
-            self.vikingArmy.remove(v)
+        resultado = self.v.receiveDamage(self.s.strength)
+        if self.v.health == 0:
+            self.vikingArmy.remove(self.v)
             
         return resultado
         
