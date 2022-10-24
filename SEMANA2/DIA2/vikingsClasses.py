@@ -11,7 +11,7 @@ class Soldier:
     
     def attack(self):
         
-        return int(self.strength)
+        return self.strength
     
     def receiveDamage(self, damage):
         
@@ -21,7 +21,7 @@ class Soldier:
 
 
 class Viking(Soldier):
-    def __init__(self, health, strength, name):
+    def __init__(self, name, health, strength):
         super().__init__(health, strength)
         self.name = name
 
