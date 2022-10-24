@@ -33,7 +33,7 @@ class Viking(Soldier):
         else:
             return str(self.name) + " has received " + str(damage) + " points of damage"
     
-    def battleCry():
+    def battleCry(self):
         return "Odin owns you all!!"
     
 
