@@ -69,7 +69,7 @@ class War:
         s.receiveDamage(v.strength)
         if s.health == 0:
             self.saxonArmy.remove(s)
-            return s.health
+            return print(s.receiveDamage(v.strength))
         else:
             pass
 
@@ -79,7 +79,7 @@ class War:
         v.receiveDamage(s.strength)
         if v.health == 0:
             self.vikingArmy.remove(v)
-            return v.health
+            return print(v.receiveDamage(s.strength))
         else:
             pass
 
