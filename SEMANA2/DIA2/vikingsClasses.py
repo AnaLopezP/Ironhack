@@ -34,7 +34,7 @@ class Viking(Soldier):
             return str(self.name) + " has received " + str(damage) + " points of damage"
     
     def battleCry(self):
-        return "Odin Owns You All!!"
+        return "Odin Owns You All!"
     
 
 # Saxon
