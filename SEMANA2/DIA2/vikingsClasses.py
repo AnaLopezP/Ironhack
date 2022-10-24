@@ -64,6 +64,6 @@ class War:
         self.saxonArmy.append(saxon)
     
     def vikingAttack(self):
-        Saxon.receiveDamage(self, Viking.attack())
+        Saxon.receiveDamage(self, Viking.attack(self))
         if Saxon.health == 0:
             self.saxonArmy.pop(Saxon)
