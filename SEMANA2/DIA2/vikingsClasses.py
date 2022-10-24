@@ -69,7 +69,8 @@ class War:
         s.receiveDamage(v.strength)
         if s.health == 0:
             self.saxonArmy.remove(s)
-            return s.receiveDamage(v.strength)
+            return "A Saxon has died in combat"
+            #return s.receiveDamage(v.strength)
         else:
             pass
 
