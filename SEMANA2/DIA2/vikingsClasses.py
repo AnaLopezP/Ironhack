@@ -11,7 +11,7 @@ class Soldier:
     
     def attack(self):
         
-        return self.strength
+        return int(self.strength)
     
     def receiveDamage(self, damage):
         
