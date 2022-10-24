@@ -21,7 +21,20 @@ class Soldier:
 
 
 class Viking(Soldier):
-    pass
+    def __init__(self, health, strength, name):
+        super().__init__(health, strength)
+        self.name = name
+
+    #metodos
+    def receiveDamage(self, damage):
+        super().receiveDamage(damage)
+        if self.health == 0:
+            return str(self.name) + " has died in act of combat"
+        else:
+            return str(self.name) + " has received " + str(damage) + " points of damage"
+    
+    def battleCry():
+        return "Odin owns you all!!"
     
 
 # Saxon
