@@ -65,5 +65,12 @@ class War:
     
     def vikingAttack(self):
         Saxon.receiveDamage(self, Viking.attack(self))
-        if Saxon.health == 0:
+        if Soldier.receiveDamage(self) == 0:
             self.saxonArmy.pop()
+        return Saxon.receiveDamage(self, Viking.attack(self))
+
+    def saxonAttack(self):
+        Viking.receiveDamage(self, Saxon.attack(self))
+        if Soldier.health == 0:
+            self.saxonArmy.pop()
+        return Viking.receiveDamage(self, Saxon.attack(self))
