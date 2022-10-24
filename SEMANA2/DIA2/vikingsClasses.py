@@ -47,7 +47,7 @@ class Saxon(Soldier):
     def receiveDamage(self, damage):
         super().receiveDamage(damage)
         if self.health == 0:
-            return "A Saxon has died in act of combat"
+            return "A Saxon has died in combat"
         else:
             return "A Saxon has received " + str(damage) + " points of damage"
 # War
