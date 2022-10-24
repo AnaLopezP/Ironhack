@@ -78,7 +78,6 @@ class War:
         resultado = v.receiveDamage(s.strength)
         if v.health == 0:
             self.vikingArmy.remove(v)
-            
         return resultado
         
 
