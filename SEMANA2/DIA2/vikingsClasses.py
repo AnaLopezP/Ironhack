@@ -27,7 +27,7 @@ class Viking(Soldier):
     #metodos
     def receiveDamage(self, damage):
         super().receiveDamage(damage)
-        if self.health == 0:
+        if self.health <=  0:
             return str(self.name) + " has died in act of combat"
         else:
             return str(self.name) + " has received " + str(damage) + " points of damage"
@@ -45,7 +45,7 @@ class Saxon(Soldier):
 
     def receiveDamage(self, damage):
         super().receiveDamage(damage)
-        if self.health == 0:
+        if self.health <= 0:
             return "A Saxon has died in combat"
         else:
             return "A Saxon has received " + str(damage) + " points of damage"
@@ -67,7 +67,8 @@ class War:
         s = random.choice(self.saxonArmy)
         v = random.choice(self.vikingArmy)
         resultado =s.receiveDamage(v.strength)
-        self.saxonArmy.remove(s)
+        if s.health <= 0:
+            self.saxonArmy.remove(s)
         return resultado
         
 
@@ -75,7 +76,8 @@ class War:
         s = random.choice(self.saxonArmy)
         v = random.choice(self.vikingArmy)
         resultado = v.receiveDamage(s.strength)
-        self.vikingArmy.remove(v)
+        if v.health <= 0:
+            self.vikingArmy.remove(v)
         return resultado
         
 
